@@ -25,7 +25,7 @@
       "src": "https://github.com/saghen/blink.lib"
     },
     "catppuccin": {
-      "rev": "49a926655a2f5579e9c276470fc300baaa49e524",
+      "rev": "e068ab5f8261f23f6f71ffd8791ae40315b77b9c",
       "src": "https://github.com/catppuccin/nvim"
     },
     "codecompanion.nvim": {
@@ -44,9 +44,21 @@
       "rev": "0415bd625c3076a6a5ee445be484574d55b4fbfc",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
+    "diffchar.vim": {
+      "rev": "14fc3fc79356d6b80462df8dbc8934f293145b9a",
+      "src": "https://github.com/rickhowe/diffchar.vim"
+    },
+    "diffview-plus.nvim": {
+      "rev": "d5c09986681a671613aef0226ef409c01561d64c",
+      "src": "https://github.com/dlyongemallo/diffview-plus.nvim"
+    },
     "fidget.nvim": {
-      "rev": "82404b196e73a00b1727a91903beef5ddc319d22",
+      "rev": "6f793b2bcd2d35e201c09520f698bb763220908a",
       "src": "https://github.com/j-hui/fidget.nvim"
+    },
+    "flog-symbols": {
+      "rev": "e01d9d8873745d19440a2207c5d2df9c890b6d43",
+      "src": "https://github.com/rbong/flog-symbols"
     },
     "fyler.nvim": {
       "rev": "8364418d1495ce90823dca1db6ac7abba27a7972",
@@ -84,6 +96,10 @@
       "rev": "16ba83bfc8a25f52bb545134f5bee082b195c460",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "mini.icons": {
+      "rev": "e56797f90192d81f1fda02e662fc3e8e3d775027",
+      "src": "https://github.com/nvim-mini/mini.icons"
+    },
     "mini.misc": {
       "rev": "317e20ad3bdf0f4535f9a7efdae7fbe5c4439f29",
       "src": "https://github.com/nvim-mini/mini.misc"
@@ -93,8 +109,12 @@
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neo-tree.nvim": {
-      "rev": "722a182f6608172bdc3fd295b6180e583316ef1d",
+      "rev": "1b4c40051f2623d0a7dcf19d5b74b997b97b0a9a",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim"
+    },
+    "neogit": {
+      "rev": "43ea1a0854052e583f647e0b35879f0158a70a78",
+      "src": "https://github.com/NeogitOrg/neogit"
     },
     "noice.nvim": {
       "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
@@ -139,6 +159,10 @@
     "reactive.nvim": {
       "rev": "0588b5c2b0cf49bd2232fe4366b3516c32edee44",
       "src": "https://github.com/rasulomaroff/reactive.nvim"
+    },
+    "real-icons.nvim": {
+      "rev": "9854bee83aa91e7172f0d072b544305129764e30",
+      "src": "https://github.com/Mirsmog/real-icons.nvim"
     },
     "render-markdown.nvim": {
       "rev": "5adf0895310c1904e5abfaad40a2baad7fe44a07",

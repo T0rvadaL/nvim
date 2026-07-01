@@ -85,7 +85,9 @@ require("neo-tree").setup({
       end,
     },
   },
-
+  default_component_configs = {
+    git_status = { staged = "󰱒" },
+  },
   filesystem = {
     use_libuv_file_watcher = true,
     filtered_items = { visible = true },

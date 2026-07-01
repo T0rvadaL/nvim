@@ -10,8 +10,7 @@ g.neovide_cursor_animation_length = 0.0
 g.neovide_padding_top = 14
 g.neovide_padding_right = 14
 g.neovide_padding_left = 14
-g.guifont = "IoskeleyMono_Nerd_Font:h13"
-
+opt.guifont = "IoskeleyMono Nerd Font,Flog Symbols:h15"
 -- Tabs
 opt.expandtab = true -- Use spaces instead of tabs
 

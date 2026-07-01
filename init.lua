@@ -1,11 +1,11 @@
 _G.Config = require("core")
 
-local modules = {
+Config.setup(
   "config.autocmds",
   "config.options",
   "config.keymaps",
   "config.ui2",
-  "config.colorscheme",
+  "config.theme",
   "config.notifications",
   "config.treesitter",
   "config.lsp",
@@ -17,8 +17,5 @@ local modules = {
   "config.neo_tree",
   "config.trouble",
   "config.ft.markdown",
-}
-
-for _, module in ipairs(modules) do
-  require(module)
-end
+  "config.vcs"
+)

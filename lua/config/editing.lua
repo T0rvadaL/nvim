@@ -1,4 +1,6 @@
-Config.plugin.add("saecki/live-rename.nvim")
+Config.plugin.add("windwp/nvim-ts-autotag", "saecki/live-rename.nvim")
+
+require("nvim-ts-autotag").setup()
 
 local lr = require("live-rename")
 
@@ -10,8 +12,3 @@ lr.setup({
 })
 
 Config.keymap.set("n", "ar", lr.rename)
-
-Config.load.before({ "BufReadPre", "BufNewFile" }, function()
-  Config.plugin.add("windwp/nvim-ts-autotag")
-  require("nvim-ts-autotag").setup()
-end)
