@@ -1,5 +1,16 @@
+local is_windows = vim.fn.has("win32") == 1
+
+local shims = is_windows and (vim.env.LOCALAPPDATA .. [[\mise\shims]]) or (vim.env.HOME .. "/.local/share/mise/shims")
+
+local sep = is_windows and ";" or ":"
+
+if not vim.env.PATH:find(shims, 1, true) then
+	vim.env.PATH = shims .. sep .. vim.env.PATH
+end
+
 vim.diagnostic.config({
-  virtual_text = true,
+	virtual_text = true,
+	update_in_insert = true,
 })
 
 local opt, g = vim.opt, vim.g
@@ -7,9 +18,9 @@ local opt, g = vim.opt, vim.g
 -- Neovide
 g.neovide_scroll_animation_length = 0.0
 g.neovide_cursor_animation_length = 0.0
-g.neovide_padding_top = 14
-g.neovide_padding_right = 14
-g.neovide_padding_left = 14
+-- g.neovide_padding_top = 14
+-- g.neovide_padding_right = 14
+-- g.neovide_padding_left = 14
 opt.guifont = "IoskeleyMono Nerd Font,Flog Symbols:h15"
 -- Tabs
 opt.expandtab = true -- Use spaces instead of tabs
@@ -35,16 +46,24 @@ opt.completeopt = "menu,menuone,noselect" -- Completion options
 opt.cursorline = true -- Highlight the cursor line
 opt.list = true -- Show invisible characters
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
+	-- vert = " ",
+	-- vertleft = " ",
+	-- vertright = " ",
+	-- verthoriz = " ",
+	-- horiz = " ",
+	-- horizup = " ",
+	-- horizdown = " ",
 }
 opt.mouse = "a"
 opt.guicursor = {
-  "n-v-c:block-blinkon500-blinkoff500",
-  "i-ci-ve:ver20-blinkon500-blinkoff500",
-  "r-cr:hor20-blinkon500-blinkoff250",
+	"n-v-c:block-blinkon500-blinkoff500",
+	"i-ci-ve:ver20-blinkon500-blinkoff500",
+	"r-cr:hor20-blinkon500-blinkoff250",
 }
+opt.signcolumn = "yes"

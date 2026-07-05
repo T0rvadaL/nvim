@@ -1,7 +1,7 @@
 {
   "plugins": {
     "agentic.nvim": {
-      "rev": "ca7700bdcf57f6079833574d924c99f0d3dbc4b9",
+      "rev": "9ca49020144ba9a30d1a664a371d4627d9b87a51",
       "src": "https://github.com/carlos-algms/agentic.nvim"
     },
     "auto-dark-mode.nvim": {
@@ -23,6 +23,10 @@
     "blink.lib": {
       "rev": "b127d48bf8e9ac9cf41f6e0fbead317503f76558",
       "src": "https://github.com/saghen/blink.lib"
+    },
+    "bufferline.nvim": {
+      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
+      "src": "https://github.com/akinsho/bufferline.nvim"
     },
     "catppuccin": {
       "rev": "e068ab5f8261f23f6f71ffd8791ae40315b77b9c",
@@ -79,6 +83,10 @@
     "live-rename.nvim": {
       "rev": "205bddec4bf1276c81a03777f8335d4ad034ae03",
       "src": "https://github.com/saecki/live-rename.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "markview.nvim": {
       "rev": "301e431c7b618235f5447d54465c70934bd33668",
