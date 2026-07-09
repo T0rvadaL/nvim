@@ -7,24 +7,6 @@ local fs_key = "<C-e>"
 local git_key = "<C-g>"
 local buffers_key = "<C-b>"
 
-local function focus(source, opts)
-	return function()
-		local before = vim.api.nvim_get_current_win()
-		local base_args = { action = "focus", source = source }
-
-		local args = vim.tbl_extend("force", base_args, opts or {})
-
-		ntc.execute(args)
-
-		-- If a source is already focused, but the cursor is on another window, and
-		-- the new source is not the same, then the cursor will not move to Neo-tree
-		-- unless we focus again
-		if vim.api.nvim_get_current_win() == before then
-			ntc.execute(base_args)
-		end
-	end
-end
-
 local og = { buf = nil, win = nil, pos = nil } -- the "original" file
 
 local function restore_original()
@@ -61,9 +43,7 @@ require("neo-tree").setup({
 	open_files_do_not_replace_types = { "terminal", "trouble", "qf", "edgy", "Outline" },
 	window = {
 		mappings = {
-			[fs_key] = focus("filesystem"),
-			-- [git_key] = focus("git_status"),
-			-- [buffers_key] = focus("buffers"),
+			["<C-e>"] = "close",
 			["l"] = "open",
 			["h"] = "close_node",
 			["<Space>"] = "none",
@@ -136,7 +116,10 @@ require("neo-tree").setup({
 
 local map = Config.keymap.set
 
-map("niv", fs_key, focus("filesystem", { reveal = true }))
+map("niv", fs_key, function()
+	ntc.execute({ action = "focus", reveal = true })
+	-- require("neogit").close()
+end)
 -- map("niv", git_key, focus("git_status"))
 -- map("niv", buffers_key, focus("buffers"))
 

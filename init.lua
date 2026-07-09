@@ -10,11 +10,12 @@ Config.setup(
 	"config.treesitter",
 	"config.lsp",
 	"config.editing",
-	"config.editor",
+	"config.scrollbar",
 	"config.tiny_cmdline",
 	"config.snacks",
+	-- "config.fzf",
 	"config.formatting",
-	"config.neo_tree",
+	-- "config.neo_tree",
 	"config.trouble",
 	"config.ft.markdown",
 	"config.vcs",
@@ -22,5 +23,6 @@ Config.setup(
 	"config.bufferline",
 	"config.statusline",
 	"config.ft.markdown",
+	"config.edgy",
 	"config.session"
 )

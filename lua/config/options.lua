@@ -13,14 +13,14 @@ vim.diagnostic.config({
 	update_in_insert = true,
 })
 
+vim.cmd([[aunmenu PopUp.How-to\ disable\ mouse]])
+
 local opt, g = vim.opt, vim.g
 
 -- Neovide
-g.neovide_scroll_animation_length = 0.0
+g.neovide_scroll_animation_length = 0.05 
 g.neovide_cursor_animation_length = 0.0
--- g.neovide_padding_top = 14
--- g.neovide_padding_right = 14
--- g.neovide_padding_left = 14
+g.neovide_position_animation_length = 0.0
 opt.guifont = "IoskeleyMono Nerd Font,Flog Symbols:h15"
 -- Tabs
 opt.expandtab = true -- Use spaces instead of tabs
@@ -61,6 +61,7 @@ opt.fillchars = {
 	-- horizdown = " ",
 }
 opt.mouse = "a"
+vim.o.mousemoveevent = true
 opt.guicursor = {
 	"n-v-c:block-blinkon500-blinkoff500",
 	"i-ci-ve:ver20-blinkon500-blinkoff500",

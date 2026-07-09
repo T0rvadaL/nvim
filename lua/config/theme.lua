@@ -1,8 +1,8 @@
 local g = vim.g
-
 g.neovide_underline_stroke_scale = 2.0
 g.neovide_floating_shadow = false
-g.neovide_opacity = 1.0
+g.neovide_floating_blur_amount_x = 0.0
+g.neovide_floating_blur_amount_y = 0.0
 
 Config.plugin.add(
 	{ src = "catppuccin/nvim", name = "catppuccin" },
@@ -31,9 +31,12 @@ require("catppuccin").setup({
 		markview = true,
 		neotest = true,
 		snacks = { enabled = true, indent_scope_color = "pink" },
+		diffview = true,
 	},
 	custom_highlights = function(colors)
+		local U = require("catppuccin.utils.colors")
 		local sep_color = colors.surface0
+
 		return {
 			LiveRename = {
 				fg = colors.base,
@@ -45,9 +48,35 @@ require("catppuccin").setup({
 			DiffviewDiffDeleteDim = { fg = colors.surface0 },
 			SidePanelNormal = { bg = colors.mantle },
 			AgenticTitle = { fg = colors.crust, bg = colors.sapphire, bold = true },
+			SatelliteBar = { bg = colors.surface1, blend = 50 },
+			MouseHover = { bg = U.darken(colors.surface1, 0.25, colors.mantle) },
+			SnacksPickerGitStatusUntracked = { fg = colors.lavender },
 		}
 	end,
 })
+
+Config.autocmd.create("ColorScheme", function()
+	vim.schedule(function()
+		for _, status in ipairs({
+			"Added",
+			"Copied",
+			"Deleted",
+			"Ignored",
+			"Modified",
+			"Renamed",
+			"Staged",
+			"Unmerged",
+			"Untracked",
+		}) do
+			local name = "SnacksPickerGitStatus" .. status
+			local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+			if hl.italic then
+				hl.italic = nil
+				vim.api.nvim_set_hl(0, name, hl)
+			end
+		end
+	end)
+end)
 
 local colorschemes = {
 	light = "catppuccin-latte",
@@ -72,6 +101,12 @@ require("mini.icons").setup({
 	use_file_extension = function(ext, _)
 		return not (ext3_blocklist[ext:sub(-3)] or ext4_blocklist[ext:sub(-4)])
 	end,
+	file = {
+		["init.lua"] = {
+			glyph = "󰢱",
+			hl = "MiniIconsAzure",
+		},
+	},
 })
 
 package.preload["nvim-web-devicons"] = function()

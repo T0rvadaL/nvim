@@ -70,10 +70,10 @@ agentic.setup({
 	provider_switcher = { hide_unhealthy_providers = true },
 	keymaps = {
 		widget = {
-			switch_provider = "ap",
-			switch_model = "am",
-			change_mode = "aM",
-			change_thought_level = "at",
+			switch_provider = "<Space>p",
+			switch_model = "<Space>m",
+			change_mode = "<Space>M",
+			change_thought_level = "<Space>t",
 			close = { "q", { "<C-a>", mode = { "n", "i", "v" } } },
 		},
 	},
@@ -107,8 +107,8 @@ agentic.setup({
 
 local map = Config.keymap.set
 map("niv", "<C-a>", agentic.open)
-map("n", "as", agentic.restore_session)
-map("n", "aS", agentic.new_session)
+map("n", "<Space>a", agentic.restore_session)
+map("n", "as", agentic.new_session)
 
 local ns = vim.api.nvim_create_namespace("agentic_input_placeholder")
 local PLACEHOLDER = "What's on your mind?"

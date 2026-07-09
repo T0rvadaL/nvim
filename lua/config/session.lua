@@ -2,7 +2,8 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 
 Config.plugin.add("rmagatti/auto-session")
 
-require("auto-session").setup({
+local auto_session = require("auto-session")
+auto_session.setup({
 	supressed_dirs = {
 		"/",
 		"~",
@@ -15,5 +16,7 @@ require("auto-session").setup({
 		"Development",
 	},
 	auto_restore_last_session = true,
-	pre_save_cmds = { "Neotree close", "Agentic close" },
+	pre_save_cmds = { "lua require('agentic').close()" },
 })
+
+Config.keymap.set("n", "<Space>p", auto_session.search)

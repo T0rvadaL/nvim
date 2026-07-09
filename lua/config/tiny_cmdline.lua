@@ -6,13 +6,13 @@ Config.load.on("UIEnter", function()
 		position = { y = "5%" },
 	})
 
-	Config.autocmd.create("FileType", "cmd", function()
-		local win = require("vim._core.ui2").wins.cmd
-		vim.wo[win].winblend = 100
-	end)
-
-	-- Config.autocmd.create("ColorScheme", function()
-	-- 	local border = vim.api.nvim_get_hl(0, { name = "FloatBorder", link = false })
-	-- 	vim.api.nvim_set_hl(0, "TinyCmdlineBorder", { fg = border.fg })
+	-- Config.autocmd.create("FileType", "cmd", function()
+	-- 	local win = require("vim._core.ui2").wins.cmd
+	-- 	vim.wo[win].winblend = 100
 	-- end)
+
+	Config.autocmd.create("ColorScheme", function()
+		local border = vim.api.nvim_get_hl(0, { name = "FloatBorder", link = false })
+		vim.api.nvim_set_hl(0, "TinyCmdlineBorder", { fg = border.fg })
+	end)
 end)

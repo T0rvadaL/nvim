@@ -21,8 +21,14 @@ require("bufferline").setup({
 				highlight = "SidePanelNormal",
 			},
 			{
+				filetype = "snacks_layout_box",
+				text = "Explorer",
+				highlight = "SidePanelNormal",
+			},
+			{
 				filetype = "NeogitStatus",
 				highlight = "NeoTreeNormal",
+				text = "Git",
 			},
 			{
 				filetype = "AgenticChat",

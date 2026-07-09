@@ -13,6 +13,13 @@ Config.load.once(function()
 	})
 
 	Config.tool.add({ "lua-language-server" }, function()
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					workspace = { checkThirdParty = false },
+				},
+			},
+		})
 		vim.lsp.enable("lua_ls")
 	end)
 end)
